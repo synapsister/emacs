@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/nix-mode/nix-prettify-mode.el

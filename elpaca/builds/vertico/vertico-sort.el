@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/vertico/extensions/vertico-sort.el

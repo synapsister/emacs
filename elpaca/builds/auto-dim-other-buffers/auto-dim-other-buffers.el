@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/auto-dim-other-buffers/auto-dim-other-buffers.el

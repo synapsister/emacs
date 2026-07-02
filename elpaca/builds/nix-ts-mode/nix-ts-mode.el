@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/nix-ts-mode/nix-ts-mode.el
