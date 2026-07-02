@@ -1,0 +1,1 @@
+/home/neko/.config/emacs/elpaca/sources/nix-mode/nix-log.el

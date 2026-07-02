@@ -1,0 +1,15 @@
+(elpaca orderless)
+(elpaca base16-theme)
+(elpaca auto-dim-other-buffers)
+(elpaca vertico)
+(elpaca gcmh)
+(elpaca undo-fu)
+(elpaca meow)
+(elpaca kdl-mode)
+(elpaca nix-ts-mode)
+(elpaca colorful-mode)
+(elpaca eat)
+
+(elpaca-wait)
+
+(provide 'init-packages)
