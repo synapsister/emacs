@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/base16-emacs/build/base16-everforest-dark-hard-theme.el

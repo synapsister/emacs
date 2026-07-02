@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/emacs-kdl-mode/kdl-mode.el

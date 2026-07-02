@@ -1,1 +1,0 @@
-/home/neko/.config/emacs/elpaca/sources/colorful-mode/colorful-mode.el
