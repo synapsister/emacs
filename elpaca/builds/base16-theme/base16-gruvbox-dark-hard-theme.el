@@ -1,0 +1,1 @@
+/home/neko/.config/emacs/elpaca/sources/base16-emacs/build/base16-gruvbox-dark-hard-theme.el

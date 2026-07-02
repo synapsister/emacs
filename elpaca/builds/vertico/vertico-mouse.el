@@ -1,0 +1,1 @@
+/home/neko/.config/emacs/elpaca/sources/vertico/extensions/vertico-mouse.el

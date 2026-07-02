@@ -1,0 +1,1 @@
+/home/neko/.config/emacs/elpaca/sources/compat/compat-28.el

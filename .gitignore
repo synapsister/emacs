@@ -1,3 +1,5 @@
 ./elpaca
 ./eln-cache
 ./tree-sitter
+./.gitignore
+./custom.el

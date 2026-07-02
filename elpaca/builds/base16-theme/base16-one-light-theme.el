@@ -1,0 +1,1 @@
+/home/neko/.config/emacs/elpaca/sources/base16-emacs/build/base16-one-light-theme.el
