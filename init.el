@@ -1,8 +1,7 @@
 
  ;; --- init.el --- ;;
-
+(add-to-list 'custom-theme-load-path "~/.config/emacs/themes/")
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
-
 (require 'init-elpaca)
 (setq ring-bell-function 'ignore     ; disable bell
       use-short-answers t            ; short answers to y/n questions
@@ -35,6 +34,7 @@
 (setq enable-recursive-minibuffers t
       minibuffer-depth-indicate-mode t)
 
+(set-frame-font "IosevkaTerm Nerd Font Mono" nil t)
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -46,10 +46,7 @@
 (global-auto-revert-mode 1)
 (pixel-scroll-precision-mode 1)
 (repeat-mode 1)
-(global-tab-line-mode 1)
 (global-hl-line-mode 1)
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
 (which-key-mode)
 (dolist (hook '(text-mode-hook
             org-mode-hook

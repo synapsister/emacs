@@ -4,14 +4,11 @@
 ;; this file configures newly installed packages; builtin packages are configured inside init.el
 
 (require 'meow) ; load meow-edit
+(add-hook 'after-init-hook 'global-company-mode)
 
-(gcmh-mode 1 ) ; enable gcmh mode
+(gcmh-mode 1) ; enable gcmh mode
 
 (load-theme 'base16-chalk t) ; load chalk theme
-
-(auto-dim-other-buffers-mode) ; enable auto-dim-other-buffers mode
-(custom-set-faces
- '(auto-dim-other-buffers ((t (:background "#0e0e0e"))))) ; change the color of dimmed buffers
 
 (vertico-mode) ; enable vertico-mode
 
@@ -21,11 +18,20 @@
 
 ;; keybinds
 
+
 (global-unset-key (kbd "C-z"))                    ; globally unbind C-z
 (global-set-key (kbd "C-z")   'undo-fu-only-undo) ; bind C-z to undo
 (global-set-key (kbd "C-S-z") 'undo-fu-only-redo) ; bind C-S-z to redo
 
+(global-set-key (kbd "C-c c") 'company-manual-begin)
+
 (global-set-key (kbd "C-c v") 'eat-other-window)  ; open eat in a splice
+
+(global-set-key (kbd "C-c t") 'tab-bar-new-tab)
+(global-set-key (kbd "C-c d") 'tab-bar-switch-to-next-tab)
+(global-set-key (kbd "C-c a") 'tab-bar-switch-to-prev-tab)
+(global-set-key (kbd "C-S-c t") 'tab-bar-close-tab-by-name)
+
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
