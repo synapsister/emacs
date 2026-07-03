@@ -1,6 +1,5 @@
 
  ;; --- init.el --- ;;
-(add-to-list 'custom-theme-load-path "~/.config/emacs/themes/")
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 (require 'init-elpaca)
 (setq ring-bell-function 'ignore     ; disable bell
@@ -40,6 +39,8 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
 (delete-selection-mode 1)
 (column-number-mode 1)
 (electric-pair-mode 1)
