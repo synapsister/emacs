@@ -17,6 +17,8 @@
       completion-category-overrides '((file (styles partial-completion)))
       completion-pcm-leading-wildcard t)
 
+(setq eat-query-before-killing-running-terminal nil)
+(setq eat-shell (or (executable-find "zsh") eat-shell))
 ;; keybinds
 
 
