@@ -11,6 +11,7 @@
 (load-theme 'base16-chalk t) ; load chalk theme
 
 (vertico-mode) ; enable vertico-mode
+(setq vertico-count 40)
 
 (setq completion-styles '(orderless basic)
       completion-category-overrides '((file (styles partial-completion)))
