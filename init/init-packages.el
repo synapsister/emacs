@@ -1,3 +1,4 @@
+
 (elpaca tmux-mode)
 (elpaca orderless)
 (elpaca base16-theme)
@@ -11,6 +12,9 @@
 (elpaca eat)
 (elpaca company)
 (elpaca company-qml)
+(elpaca company-shell)
+(elpaca company-lua)
+(elpaca company-go)
 (elpaca-wait)
 
 (provide 'init-packages)
