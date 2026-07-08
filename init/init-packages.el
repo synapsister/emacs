@@ -1,4 +1,6 @@
 
+;; --- packages --- ;;
+
 (elpaca tmux-mode)
 (elpaca orderless)
 (elpaca base16-theme)

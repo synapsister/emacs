@@ -19,12 +19,8 @@
 
 (setq eat-query-before-killing-running-terminal nil)
 (setq eat-shell (or (executable-find "zsh") eat-shell))
+
 ;; keybinds
-
-
-(global-unset-key (kbd "C-z"))                    ; globally unbind C-z
-(global-set-key (kbd "C-z")   'undo-fu-only-undo) ; bind C-z to undo
-(global-set-key (kbd "C-S-z") 'undo-fu-only-redo) ; bind C-S-z to redo
 
 (global-set-key (kbd "C-c c") 'company-manual-begin)
 
@@ -38,11 +34,12 @@
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (meow-motion-define-key
-   '("j" . meow-next)
-   '("k" . meow-prev)
+
+   '("s" . meow-next)
+   '("w" . meow-prev)
    '("<escape>" . ignore))
+
   (meow-leader-define-key
-   ;; Use SPC (0-9) for digit arguments.
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
    '("3" . meow-digit-argument)
@@ -55,6 +52,7 @@
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key)
    '("?" . meow-cheatsheet))
+
   (meow-normal-define-key
    '("0" . meow-expand-0)
    '("9" . meow-expand-9)
@@ -66,59 +64,42 @@
    '("3" . meow-expand-3)
    '("2" . meow-expand-2)
    '("1" . meow-expand-1)
-   '("-" . negative-argument)
    '(";" . meow-reverse)
    '("," . meow-inner-of-thing)
    '("." . meow-bounds-of-thing)
    '("[" . meow-beginning-of-thing)
    '("]" . meow-end-of-thing)
-   '("a" . meow-append)
-   '("A" . meow-open-below)
-   '("b" . meow-back-word)
-   '("B" . meow-back-symbol)
-   '("c" . meow-change)
-   '("d" . meow-delete)
-   '("D" . meow-backward-delete)
-   '("e" . meow-next-word)
-   '("E" . meow-next-symbol)
-   '("f" . meow-find)
-   '("g" . meow-cancel-selection)
-   '("G" . meow-grab)
-   '("h" . meow-left)
-   '("H" . meow-left-expand)
+
+   ;; -- navigation -- ;;
+   ; uses wasd navigation because im used to it
+
+   '("a" . meow-left)
+   '("A" . meow-left-expand)
+   '("q" . meow-insert)
+   '("s" . meow-next)
+   '("S" . meow-next-expand)
+   '("w" . meow-prev)
+   '("W" . meow-prev-expand)
+   '("d" . meow-right)
+   '("D" . meow-right-expand)
+
+   ;; -- text insertion -- ;;
+
+   '("o" . meow-append)
+   '("O" . meow-open-below)
    '("i" . meow-insert)
    '("I" . meow-open-above)
-   '("j" . meow-next)
-   '("J" . meow-next-expand)
-   '("k" . meow-prev)
-   '("K" . meow-prev-expand)
-   '("l" . meow-right)
-   '("L" . meow-right-expand)
-   '("m" . meow-join)
-   '("n" . meow-search)
-   '("o" . meow-block)
-   '("O" . meow-to-block)
-   '("p" . meow-yank)
-   '("q" . meow-quit)
-   '("Q" . meow-goto-line)
-   '("r" . meow-replace)
-   '("R" . meow-swap-grab)
-   '("s" . meow-kill)
-   '("t" . meow-till)
-   '("u" . meow-undo)
-   '("U" . meow-undo-in-selection)
-   '("v" . meow-visit)
-   '("w" . meow-mark-word)
-   '("W" . meow-mark-symbol)
-   '("x" . meow-line)
-   '("X" . meow-goto-line)
-   '("y" . meow-save)
-   '("Y" . meow-sync-grab)
-   '("z" . meow-pop-selection)
-   '("'" . repeat)
+
+   ;; -- undo-redo via undo-fu.el -- ;;
+   
+   '("u" . undo-fu-only-undo)
+   '("U" . undo-fu-only-redo)
+
+   ;; -- escape exits the mode -- ;;
+   
    '("<escape>" . ignore)))
+
 (meow-setup)
 (meow-global-mode 1)
 
 (provide 'init-configure)
-
