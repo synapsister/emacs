@@ -58,6 +58,8 @@
             eww-mode-hook))
 (add-hook hook #'visual-line-mode))
 
+(setq which-key-idle-delay 0.2)
+
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file 'noerror 'nomessage))
