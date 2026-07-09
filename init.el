@@ -1,13 +1,12 @@
 
  ;; --- init.el --- ;;
-(add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
+
 (require 'init-elpaca)
 (setq ring-bell-function 'ignore     ; disable bell
       use-short-answers t            ; short answers to y/n questions
       use-dialog-box nil             ; no gtk dialogs
       confirm-kill-emacs 'y-or-n-p)  ; prevent accidental emacs kills
 
-      
 (setq make-backup-files nil    ; dont litter
       auto-save-default nil    ; my file
       create-lockfiles nil     ; system tree
@@ -33,6 +32,8 @@
 (setq enable-recursive-minibuffers t
       minibuffer-depth-indicate-mode t)
 
+(setq which-key-idle-delay 0.1)
+
 (set-frame-font "IosevkaTerm Nerd Font Mono" nil t)
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -40,15 +41,15 @@
 (set-keyboard-coding-system 'utf-8)
 
 (global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
-(delete-selection-mode 1)
-(column-number-mode 1)
-(electric-pair-mode 1)
-(global-auto-revert-mode 1)
-(pixel-scroll-precision-mode 1)
-(repeat-mode 1)
-(global-hl-line-mode 1)
-(which-key-mode)
+(setq display-line-numbers-type 'relative) ; turn relative line numbers on
+(delete-selection-mode 1)                  ; when text is selected, inserting a character deletes selection
+(column-number-mode 1)                     ; show column number in modeline 
+(electric-pair-mode 1)                     ; braces and whatnot spawn a closing variant when opened
+(global-auto-revert-mode 1)                ; automatically refresh buffer when files are changed
+(pixel-scroll-precision-mode 1)            ; pixel by pixel scrolling
+(repeat-mode 1)                            ; certain commands can be repeated 
+(global-hl-line-mode 1)                    ; highlights the active line
+(which-key-mode)                           ; enable which-key-mode to show shortcuts        
 (dolist (hook '(text-mode-hook
             org-mode-hook
             markdown-mode-hook
@@ -57,8 +58,6 @@
             Info-mode-hook
             eww-mode-hook))
 (add-hook hook #'visual-line-mode))
-
-(setq which-key-idle-delay 0.2)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)

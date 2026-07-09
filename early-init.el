@@ -1,6 +1,36 @@
 
 ;; --- early init --- ;;
 
+(defvar emacs/root-dir user-emacs-directory)                           ; set variable for emacs root
+
+(defmacro ri/defpath (name sub)                                        ; macro for defining paths
+  (declare (indent defun))
+  `(defvar ,name
+     (expand-file-name ,sub emacs/root-dir)))
+
+(ri/defpath emacs/init-dir "init/")
+(ri/defpath emacs/local-dir "local/")
+(ri/defpath emacs/custom-file "local/custom-vars.el")
+(setq custom-file (expand-file-name "custom-vars.el" emacs/local-dir))
+(setq package-user-dir (expand-file-name "elpa" emacs/local-dir))
+(setq user-emacs-directory emacs/local-dir)
+
+(defun ri/add-to-load-path-recursively (path)
+  "Add PATH and all its subdirs to the `load-path'."
+  (when path
+    (let ((default-directory path))
+      (normal-top-level-add-to-load-path '("."))
+      (normal-top-level-add-subdirs-to-load-path))))
+
+(ri/add-to-load-path-recursively emacs/init-dir)
+
+(when (and (fboundp 'startup-redirect-eln-cache)
+           (fboundp 'native-comp-available-p)
+           (native-comp-available-p))
+  ;; change the eln-cache dir for cleanliness
+  (startup-redirect-eln-cache
+   (convert-standard-filename
+    (expand-file-name  "var/eln-cache/" emacs/local-dir))))
 (setq package-enable-at-startup nil)                    ; disable package.el
 
 (setq inhibit-startup-screen t                          ; disable splash message

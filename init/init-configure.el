@@ -31,6 +31,8 @@
 (global-set-key (kbd "C-c a") 'tab-bar-switch-to-prev-tab)
 (global-set-key (kbd "C-S-c t") 'tab-bar-close-tab-by-name)
 
+(setq meow-expand-hint-remove-delay 0.1)
+(setq meow-keypad-describe-delay 0.1)
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (meow-motion-define-key
