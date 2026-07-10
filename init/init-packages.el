@@ -1,6 +1,7 @@
 
 ;; --- packages --- ;;
 
+(elpaca no-littering)
 (elpaca tmux-mode)
 (elpaca orderless)
 (elpaca base16-theme)

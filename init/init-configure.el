@@ -1,4 +1,4 @@
-
+ 
 ;; --- init-configure.el -- ;;
 
 ;; this file configures newly installed packages; builtin packages are configured inside init.el
@@ -20,6 +20,21 @@
 (setq eat-query-before-killing-running-terminal nil)
 (setq eat-shell (or (executable-find "zsh") eat-shell))
 
+  (let ((auto-save-dir (no-littering-expand-var-file-name "auto-save/")))
+    (make-directory auto-save-dir t)
+    (setq auto-save-file-name-transforms
+             `(("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'"
+                ,(concat (file-name-as-directory temporary-file-directory) "\\2") t)
+               ("\\`/tmp\\([^/]*/\\)*\\(.*\\)\\'" "\\2")
+               ("\\`/dev/shm\\([^/]*/\\)*\\(.*\\)\\'" "\\2")
+               ("." ,auto-save-dir t))))
+
+  (let ((backup-dir (no-littering-expand-var-file-name "backup/")))
+    (make-directory backup-dir t)
+    (setq backup-directory-alist
+             `(("\\`/tmp/" . nil)
+               ("\\`/dev/shm/" . nil)
+               ("." . ,backup-dir))))
 ;; keybinds
 
 (global-set-key (kbd "C-c c") 'company-manual-begin)
