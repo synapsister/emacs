@@ -44,7 +44,7 @@
 (global-set-key (kbd "C-c t") 'tab-bar-new-tab)
 (global-set-key (kbd "C-c d") 'tab-bar-switch-to-next-tab)
 (global-set-key (kbd "C-c a") 'tab-bar-switch-to-prev-tab)
-(global-set-key (kbd "C-S-c t") 'tab-bar-close-tab-by-name)
+(global-set-key (kbd "C-c w") 'tab-bar-close-tab)
 
 (setq meow-expand-hint-remove-delay 0.1)
 (setq meow-keypad-describe-delay 0.1)

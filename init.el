@@ -40,6 +40,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+(tab-bar-mode 1)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative) ; turn relative line numbers on
 (delete-selection-mode 1)                  ; when text is selected, inserting a character deletes selection
