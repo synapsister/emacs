@@ -110,6 +110,9 @@
    ;; -- select text -- ;;
 
    '("x" . meow-line)
+   '("g" . meow-cancel-selection)
+   '("G" . meow-grab)
+   
    '("z" . negative-argument)
 
    ;; -- escape exits the mode -- ;;
