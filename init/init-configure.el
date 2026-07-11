@@ -81,11 +81,6 @@
    '("3" . meow-expand-3)
    '("2" . meow-expand-2)
    '("1" . meow-expand-1)
-   '(";" . meow-reverse)
-   '("," . meow-inner-of-thing)
-   '("." . meow-bounds-of-thing)
-   '("[" . meow-beginning-of-thing)
-   '("]" . meow-end-of-thing)
 
    ;; -- navigation -- ;;
    ; uses wasd navigation because im used to it
@@ -111,6 +106,11 @@
    
    '("u" . undo-fu-only-undo)
    '("U" . undo-fu-only-redo)
+
+   ;; -- select text -- ;;
+
+   '("x" . meow-line)
+   '("z" . negative-argument)
 
    ;; -- escape exits the mode -- ;;
    
