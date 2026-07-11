@@ -112,9 +112,12 @@
    '("x" . meow-line)
    '("g" . meow-cancel-selection)
    '("G" . meow-grab)
-   
    '("z" . negative-argument)
 
+   ;; -- misc -- ;;
+
+   '("Q" . meow-quit)
+   
    ;; -- escape exits the mode -- ;;
    
    '("<escape>" . ignore)))

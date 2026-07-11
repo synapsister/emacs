@@ -38,14 +38,13 @@
       inhibit-startup-echo-area-message user-login-name ; disable "for information about gnu emacs..." text
       initial-scratch-message nil                       ; disable scratch buffer message
       initial-major-mode 'fundamental-mode)             ; scratch opens as plain buffer
-(setq default-frame-alist                   
-      (append '((menu-bar-lines . 0)        ; no menu bar
-                (tool-bar-lines . 0)        ; no tool bar
-                (vertical-scroll-bars)      ; no scroll bars
-                (horizontal-scroll-bars)    ; no scroll bars
-                (internal-border-width . 0) ; no padding
-                (fullscreen . maximized))   ; maximize frame
-              default-frame-alist))
+;; (setq default-frame-alist                   
+;;       (append '((menu-bar-lines . 0)        ; no menu bar
+;;                 (tool-bar-lines . 0)        ; no tool bar
+;;                 (vertical-scroll-bars)      ; no scroll bars
+;;                 (horizontal-scroll-bars)    ; no scroll bars
+;;                 (internal-border-width . 0)) ; no padding
+;;               default-frame-alist))
 
 (setq-default truncate-lines t)                ; default to truncating lines for most buffers
 (setq truncate-partial-width-windows nil       ; wrapping for split windows
