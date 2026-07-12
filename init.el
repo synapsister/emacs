@@ -64,5 +64,12 @@
 (when (file-exists-p custom-file)
   (load custom-file 'noerror 'nomessage))
 
+(defun er-auto-create-missing-dirs ()
+  (let ((target-dir (file-name-directory buffer-file-name)))
+    (unless (file-exists-p target-dir)
+      (make-directory target-dir t))))
+
+(add-to-list 'find-file-not-found-functions #'er-auto-create-missing-dirs)
+
 (require 'init-packages)
 (require 'init-configure)
